@@ -9,7 +9,7 @@ export const Modal = ({modal, type}: any)=>{
         </div>
         <section className='box_modal'>
             <h3 style={type == 'lcr' ? {color: '#28FF00'} : {color: '#FF0000'}}>{type == 'lcr' ? 'Lançamento de lucros' : 'Lançamento de despesas'}</h3>
-            <div className='date'>
+            <div className='dates'>
                 <div className='date'>30 <img src="/select.png" alt="select"/></div>
                 <div className='date'>mar <img src="/select.png" alt="select"/></div>
                 <div className='date'>2023 <img src="/select.png" alt="select"/></div>

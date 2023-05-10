@@ -3,8 +3,10 @@ import './Homec.scss'
 import { Modal } from '../modal/Modal';
 
 export const Homec = ()=>{
+    
     const [modallcr,setModallcr] = useState(false);
     const [modaldsp,setModaldsp] = useState(false);
+
     return(
         <main className='content'>
             <div>
@@ -26,12 +28,12 @@ export const Homec = ()=>{
                 <section className='lcr_mes'>
                     <span className='lcr_span'>Lucros</span>
                     <span className='lcr_value'>R$ 850,00</span>
-                    <button>Visualisar outros meses</button>
+                    <a href='/lucros'>Visualisar outros meses</a>
                 </section>
                 <section className='dsp_mes'>
                     <span className='dsp_span'>Despesas</span>
                     <span className='dsp_value'>R$ 850,00</span>
-                    <button>Visualisar outros meses</button>
+                    <a href='/despesas'>Visualisar outros meses</a>
                 </section>
             </div>
             {modallcr == true ? <Modal modal={()=>{setModallcr(false)}} type='lcr'></Modal> : <></>}

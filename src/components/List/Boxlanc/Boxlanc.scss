@@ -1,0 +1,54 @@
+.boxlanc{
+    margin: 0 auto;
+    width: 90%;
+    height: 90px;
+    border: 1px solid #364132;
+    border-radius: 10px;
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    .barra{
+        color: rgba(54, 65, 50, 0.5);
+        cursor: default;
+    }
+    span{
+        padding: 0 20px;
+    }
+    .value{
+        font-weight: 800;
+        font-size: 20px;
+        width: 15%;
+        display: flex;
+        justify-content: center;
+    }
+    .name{
+        font-weight: 800;
+        font-size: 20px;
+        color: #364132;
+        width: 45%;
+    }
+    .datelanc{
+        font-weight: 800;
+        font-size: 20px;
+        color: #364132;
+        width: 20%;
+        display: flex;
+        justify-content: center;
+    }
+    .icons{
+        width: 15%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        .edit{
+            font-size: 30px;
+            color: #364132;
+            cursor: pointer;
+        }
+        .delete{
+            font-size: 30px;
+            color: #364132;
+            cursor: pointer;
+        }
+    }
+}

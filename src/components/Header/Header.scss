@@ -1,7 +1,7 @@
 header{
     width: 100vw;
     height: 65px;
-    border: 1px solid rgba(54, 65, 50, 0.6);
+    border-bottom: 1px solid rgba(54, 65, 50, 0.6);
     display: flex;
     .container{
         width: 100%;
@@ -9,25 +9,32 @@ header{
         margin: 0 auto;
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: space-between;
         padding: 0 35px;
-        .gear{
-            font-size: 2em;
-            cursor: pointer;
-            color: #364132;
+        .logo{
+            width: 10%;
+            height: 60%;
+            background-color: black;
         }
-        .exit{
-            position: absolute;
-            top: 55px;
-            background: #FFFFFF;
-            border: 1px solid #364132;
-            border-radius: 5px;
-            padding: 5px 0;
-            span{
-                font-size: 20px;
+        .configs{
+            .gear{
+                font-size: 2em;
                 cursor: pointer;
-                padding: 0 15px;
-                padding: 5px auto;
+                color: #364132;
+            }
+            .exit{
+                position: absolute;
+                top: 55px;
+                background: #FFFFFF;
+                border: 1px solid #364132;
+                border-radius: 5px;
+                padding: 5px 0;
+                span{
+                    font-size: 20px;
+                    cursor: pointer;
+                    padding: 0 15px;
+                    padding: 5px auto;
+                }
             }
         }
     }

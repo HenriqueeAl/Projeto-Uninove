@@ -1,0 +1,48 @@
+.list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .h1lcr{
+        font-size: 48px;
+        margin-top: 5vh;
+    }
+    
+    input{
+        width: 290px;
+        height: 50px;
+        border-radius: 5px;
+        border: 1px solid #364132;
+        outline: none;
+        margin-top: 40px;
+        padding: 0 20px;
+        font-weight: 800;
+        font-size: 20px;
+        color: rgba(54, 65, 50, 0.6);
+    }
+    .dates{
+        display: flex;
+        width: 200px;
+        margin: 0 auto;
+        justify-content: space-between;
+        margin-top: 20px;
+        .date{
+            border: 1px solid #364132;
+            color: #364132;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 800;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            img{
+                margin-left: 5px;
+            }
+        }
+    }
+    .listlanc{
+        width: 100vw;
+        max-width: 1280px;
+        margin-top: 20px;
+    }
+}

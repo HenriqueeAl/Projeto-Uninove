@@ -9,15 +9,18 @@ export const Header = ()=>{
     return(
         <header>
             <div className='container'>
-                <BsFillGearFill className='gear' onClick={()=>{
-                    setGear(!gear)
-                }}></BsFillGearFill>
-                {gear == true ? 
-                <div className='exit'>
-                    <span>Sair</span>
+                <a className='logo' href='/home'></a>
+                <div className='configs'>
+                    <BsFillGearFill className='gear' onClick={()=>{
+                        setGear(!gear)
+                    }}></BsFillGearFill>
+                    {gear == true ? 
+                    <div className='exit'>
+                        <span>Sair</span>
+                    </div>
+                    :
+                    <></>}
                 </div>
-                :
-                <></>}
             </div>
         </header>
     )
