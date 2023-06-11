@@ -14,11 +14,13 @@ export const Boxlanc = (props: any)=>{
             <div className='barra'>|</div>
             <div className='icons'>
                 <RiDeleteBin5Line className='delete' onClick={()=>{
+                    
+                    const token = localStorage.getItem('token') || 'n'
                     fetch('https://profittrack.onrender.com/delete',
                     {
                         method: 'POST',
                         headers: {
-                            'token': localStorage.getItem('token'),
+                            'token': token,
                             'id': props.data.id
                         }
                     }).then(async(e)=>{

@@ -22,6 +22,7 @@ export const Modal = ({modal, type}: any)=>{
             <form onSubmit={async (e)=>{
                 e.preventDefault();
                 if(name.length > 3 && value > 0.01){
+                    const token = localStorage.getItem('token') || 'n'
                     await fetch('https://profittrack.onrender.com/lanca',
                     {
                         method: 'POST',
@@ -29,10 +30,12 @@ export const Modal = ({modal, type}: any)=>{
                             'name': name,
                             'value': value,
                             'type': type,
-                            'token': localStorage.getItem('token')
+                            'token': token
                         }
                     })
+                    
                 }
+                
                 navigate(0)
             }}>
                 <input type="text" placeholder='Nome do lançamento' onChange={(e)=>setName(e.target.value)}/>

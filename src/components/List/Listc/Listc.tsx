@@ -7,12 +7,13 @@ export const Listc = (props: any)=>{
     const [list, setList] = useState([]);
 
     useEffect(()=>{
+        const token = localStorage.getItem('token') || 'n'
         if(props.type == 'lcr'){
             fetch('https://profittrack.onrender.com/lcr',
                 {
                     method: 'GET',
                     headers: {
-                        'token': localStorage.getItem('token')
+                        'token': token
                     }
                 }).then(async (e)=> {
                     const data = await e.json()
@@ -23,7 +24,7 @@ export const Listc = (props: any)=>{
                 {
                     method: 'GET',
                     headers: {
-                        'token': localStorage.getItem('token')
+                        'token': token
                     }
                 }).then(async (e)=> {
                     const data = await e.json()
