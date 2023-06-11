@@ -1,21 +1,41 @@
+import { useEffect, useState } from 'react'
 import { Boxlanc } from '../Boxlanc/Boxlanc'
 import './List.scss'
 
 export const Listc = (props: any)=>{
-    console.log(props.type)
+
+    const [list, setList] = useState([]);
+
+    useEffect(()=>{
+        if(props.type == 'lcr'){
+            fetch('http://localhost:3000/lcr',
+                {
+                    method: 'GET',
+                    headers: {
+                        'token': localStorage.getItem('token')
+                    }
+                }).then(async (e)=> {
+                    const data = await e.json()
+                    setList(data.data)
+                })
+        }else{
+            fetch('http://localhost:3000/dsp',
+                {
+                    method: 'GET',
+                    headers: {
+                        'token': localStorage.getItem('token')
+                    }
+                }).then(async (e)=> {
+                    const data = await e.json()
+                    setList(data.data)
+                })
+        }
+    }, [])
     return(
         <section className='list'>
             <h1 className='h1lcr' style={props.type == 'lcr' ? {color: '#28FF00'} : {color: '#FF0000'}}>{props.type == 'lcr' ? 'LUCROS' : 'DESPESAS'}</h1>
-            <input type="text" placeholder={props.type == 'lcr' ? 'Pesquise seus lucros' : 'Pesquise suas despesas'}/>
-            <div className='dates'>
-                <div className='date'>mar <img src="/select.png" alt="select"/></div>
-                <div className='date'>2023 <img src="/select.png" alt="select"/></div>
-            </div>
             <div className='listlanc'>
-                <Boxlanc type={props.type}></Boxlanc>
-                <Boxlanc type={props.type}></Boxlanc>
-                <Boxlanc type={props.type}></Boxlanc>
-                <Boxlanc type={props.type}></Boxlanc>
+                {list.map(e => <Boxlanc data={e}></Boxlanc>)}
             </div>
         </section>
     )

@@ -1,6 +1,14 @@
+import { useState } from 'react'
 import './Modal.scss'
+import { useNavigate } from 'react-router'
 
 export const Modal = ({modal, type}: any)=>{
+
+    const [name,setName] = useState<any>()
+    const [value,setValue] = useState<any>()
+
+    const navigate = useNavigate()
+
     return (
         <>
         <div className='bg_modal_black' onClick={()=>{
@@ -10,13 +18,25 @@ export const Modal = ({modal, type}: any)=>{
         <section className='box_modal'>
             <h3 style={type == 'lcr' ? {color: '#28FF00'} : {color: '#FF0000'}}>{type == 'lcr' ? 'Lançamento de lucros' : 'Lançamento de despesas'}</h3>
             <div className='dates'>
-                <div className='date'>30 <img src="/select.png" alt="select"/></div>
-                <div className='date'>mar <img src="/select.png" alt="select"/></div>
-                <div className='date'>2023 <img src="/select.png" alt="select"/></div>
             </div>
-            <form>
-                <input type="text" placeholder='Nome do lançamento'/>
-                <input type="text" placeholder='Valor do lançamento' className='inpt_lanca'/>
+            <form onSubmit={(e)=>{
+                e.preventDefault();
+                if(name.length > 3 && value > 0.01){
+                    fetch('http://localhost:3000/lanca',
+                    {
+                        method: 'POST',
+                        headers: {
+                            'name': name,
+                            'value': value,
+                            'type': type,
+                            'token': localStorage.getItem('token')
+                        }
+                    })
+                }
+                navigate(0)
+            }}>
+                <input type="text" placeholder='Nome do lançamento' onChange={(e)=>setName(e.target.value)}/>
+                <input type="number" step=".01" min=".01" placeholder='Valor do lançamento' className='inpt_lanca' onChange={(e)=>setValue(e.target.value)}/>
                 <span className='lanca_rs'>R$</span>
                 <button>Lançar</button>
             </form>

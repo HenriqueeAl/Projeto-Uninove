@@ -13,7 +13,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 700px;
-    height: 600px;
+    height: fit-content;
     border-radius: 15px;
     background-color: white;
     h3{
@@ -56,9 +56,11 @@
             font-size: 20px;
             border-radius: 10px;
         }
+        input[type=number]::-webkit-inner-spin-button { 
+            -webkit-appearance: none;
+        }
         .inpt_lanca{
             padding: 0 50px;
-            position: relative;
             background-color: transparent;
         }
         .lanca_rs{
@@ -72,6 +74,7 @@
             position: relative;
             left: 50%;
             transform: translate(-50%);
+            margin-bottom: 50px;
         }
         
     }

@@ -9,14 +9,17 @@ export const Header = ()=>{
     return(
         <header>
             <div className='container'>
-                <a className='logo' href='/home'></a>
+                <a className='logo' href='/'><img src="logo.png" alt="logo" /></a>
                 <div className='configs'>
                     <BsFillGearFill className='gear' onClick={()=>{
                         setGear(!gear)
                     }}></BsFillGearFill>
                     {gear == true ? 
                     <div className='exit'>
-                        <span>Sair</span>
+                        <span onClick={()=>{
+                            localStorage.removeItem('token')
+                            window.location.href = '/' 
+                        }}>Sair</span>
                     </div>
                     :
                     <></>}

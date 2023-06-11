@@ -12,9 +12,9 @@ header{
         justify-content: space-between;
         padding: 0 35px;
         .logo{
-            width: 10%;
-            height: 60%;
-            background-color: black;
+            img{
+                max-height: 35px;
+            }
         }
         .configs{
             .gear{

@@ -1,14 +1,29 @@
 import './Autenticacoes.scss'
+import { useState } from 'react';
 
 export const Login = ()=>{
+    const [user,setUser] = useState('');
+    const [password,setPassword] = useState('');
     return(
         <>
             <h1>Logar</h1>
             <form onSubmit={(e)=>{
                 e.preventDefault();
+                fetch('http://localhost:3000/login',
+                {
+                    method: 'POST',
+                    headers: {
+                        'user': user,
+                        'password': password
+                    }
+                }).then(async (e)=> {
+                    const data = await e.json()
+                    localStorage.setItem('token', data.token)
+                    window.location.href= '/'
+                })
             }}>
-                <input type="text" placeholder="Nome"/>
-                <input type="password" placeholder="Senha"/>
+                <input type="text" placeholder="Nome" onChange={(e)=>setUser(e.target.value)}/>
+                <input type="password" placeholder="Senha" onChange={(e)=>setPassword(e.target.value)}/>
                 <button>Entrar</button>
             </form>
             <div className='register'>

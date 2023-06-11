@@ -99,6 +99,7 @@
                 font-size: 14px;
                 display: flex;
                 align-items: center;
+                justify-content: center;
                 text-align: center;
             }
         }
@@ -113,6 +114,7 @@
             padding: 0 50px;
             align-items: center;
             justify-content: space-around;
+
             .dsp_span{
                 color: #FF0000;
                 font-weight: 800;
@@ -127,7 +129,6 @@
             a{
                 text-decoration: none;
                 background: #FF0000;
-                width: 180px;
                 height: 50px;
                 padding: 0 20px;
                 color: white;
@@ -138,7 +139,6 @@
                 font-size: 14px;
                 display: flex;
                 align-items: center;
-                text-align: center;
             }
         }
     }
