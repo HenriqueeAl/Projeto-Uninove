@@ -1,5 +1,4 @@
 import './Boxlanc.scss'
-import { MdEdit } from 'react-icons/md';
 import { RiDeleteBin5Line } from 'react-icons/ri';
 import { useNavigate } from 'react-router-dom';
 
@@ -23,8 +22,7 @@ export const Boxlanc = (props: any)=>{
                             'token': token,
                             'id': props.data.id
                         }
-                    }).then(async(e)=>{
-                      const data = await e.json()
+                    }).then(()=>{
                       navigate(0)
                     })
                 }}></RiDeleteBin5Line>
