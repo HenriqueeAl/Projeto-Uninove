@@ -9,7 +9,7 @@ export const Login = ()=>{
             <h1>Logar</h1>
             <form onSubmit={(e)=>{
                 e.preventDefault();
-                fetch('http://localhost:3000/login',
+                fetch('https://profittrack.onrender.com/login',
                 {
                     method: 'POST',
                     headers: {

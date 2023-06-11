@@ -14,7 +14,7 @@ export const Boxlanc = (props: any)=>{
             <div className='barra'>|</div>
             <div className='icons'>
                 <RiDeleteBin5Line className='delete' onClick={()=>{
-                    fetch('http://localhost:3000/delete',
+                    fetch('https://profittrack.onrender.com/delete',
                     {
                         method: 'POST',
                         headers: {

@@ -8,7 +8,7 @@ export const Listc = (props: any)=>{
 
     useEffect(()=>{
         if(props.type == 'lcr'){
-            fetch('http://localhost:3000/lcr',
+            fetch('https://profittrack.onrender.com/lcr',
                 {
                     method: 'GET',
                     headers: {
@@ -19,7 +19,7 @@ export const Listc = (props: any)=>{
                     setList(data.data)
                 })
         }else{
-            fetch('http://localhost:3000/dsp',
+            fetch('https://profittrack.onrender.com/dsp',
                 {
                     method: 'GET',
                     headers: {

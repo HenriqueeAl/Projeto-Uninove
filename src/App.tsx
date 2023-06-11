@@ -17,7 +17,7 @@ function App() {
   useEffect(()=>{
     const token = localStorage.getItem('token') || 'n'
     if(localStorage.getItem('token') != 'n'){
-      fetch('http://localhost:3000/infos',
+      fetch('https://profittrack.onrender.com/infos',
       {
           method: 'POST',
           headers: {

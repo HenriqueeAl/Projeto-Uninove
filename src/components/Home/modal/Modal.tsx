@@ -19,10 +19,10 @@ export const Modal = ({modal, type}: any)=>{
             <h3 style={type == 'lcr' ? {color: '#28FF00'} : {color: '#FF0000'}}>{type == 'lcr' ? 'Lançamento de lucros' : 'Lançamento de despesas'}</h3>
             <div className='dates'>
             </div>
-            <form onSubmit={(e)=>{
+            <form onSubmit={async (e)=>{
                 e.preventDefault();
                 if(name.length > 3 && value > 0.01){
-                    fetch('http://localhost:3000/lanca',
+                    await fetch('https://profittrack.onrender.com/lanca',
                     {
                         method: 'POST',
                         headers: {

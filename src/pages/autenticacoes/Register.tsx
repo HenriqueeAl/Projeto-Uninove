@@ -9,7 +9,7 @@ export const Register = ()=>{
             <h1>Registrar</h1>
             <form onSubmit={(e)=>{
                 e.preventDefault();
-                fetch('http://localhost:3000/register',
+                fetch('https://profittrack.onrender.com/register',
                 {
                     method: 'POST',
                     headers: {
